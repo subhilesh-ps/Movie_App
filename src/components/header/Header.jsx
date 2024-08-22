@@ -1,8 +1,10 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { IoSearch } from "react-icons/io5";
+import "../../pages/home/search/Search.css";
 
-const Header = () => {
+const Header = ({ input, handleSumbit, setInput }) => {
   return (
     <div className="header">
       <div className="headerLeft">
@@ -25,6 +27,24 @@ const Header = () => {
         </Link>
         <Link to="/movies/now_playing" style={{ textDecoration: "none" }}>
           <span>Now_Playing</span>
+        </Link>
+
+        <Link to="/movies/search">
+          {" "}
+          <div className="searchbox">
+            <input
+              style={{ textDecoration: "none" }}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <IoSearch
+              className="iconsearch"
+              onClick={() => {
+                handleSumbit();
+              }}
+            />
+          </div>
         </Link>
       </div>
     </div>

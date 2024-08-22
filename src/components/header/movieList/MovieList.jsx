@@ -19,7 +19,7 @@ const MovieList = () => {
   }, [type]);
 
   const getData = () => {
-    fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popupar"}?api_key=b7b7d45fa413b59beb06cc95ae54d171`)
+    fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=b7b7d45fa413b59beb06cc95ae54d171`)
       .then((res) => res.json())
       .then((data) => setMovieList(data.results));
   };
