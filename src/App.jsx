@@ -14,7 +14,7 @@ function App() {
   const fetchData = async (value) => {
     try {
       const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${input}?api_key=b7b7d45fa413b59beb06cc95ae54d171`
+        `https://api.themoviedb.org/3/search/movie?query=${input}&api_key=b7b7d45fa413b59beb06cc95ae54d171`
       );
       const data = await response.json();
       setSearchResult(data.results);
